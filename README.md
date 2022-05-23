@@ -35,4 +35,20 @@ Modify the values in `context/config.js` for the source, target
 1. Run the Mattermost bulk loading command as explained [here](https://docs.mattermost.com/deployment/bulk-loading.html#running-the-bulk-loading-command)  
 ---
 
+### RiffEdu bulk loading command procedure
+
+(get the `importusers.json` (or whatever you name it) file to the RiffEdu instance in the ~/tmp directory) find the container id of the edu-stk_edu-mm container (e.g. 78119bd4328b)
+
+```
+docker cp tmp/import.json 78119bd4328b:/home/mmuser/
+docker exec -it 78119bd4328b bash
+cd riffedu
+bin/mattermost import bulk ~/import.json --validate
+bin/mattermost import bulk ~/import.json --apply
+exit
+```
+
+
+
+
 Made with &#9829; by [Brightscout](http://www.brightscout.com)
