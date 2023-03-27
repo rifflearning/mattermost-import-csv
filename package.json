@@ -14,25 +14,23 @@
   },
   "dependencies": {
     "bunyan": "^1.8.10",
-    "csvtojson": "^1.1.9",
-    "joi": "^10.6.0",
-    "lodash": "^4.17.4",
-    "slug": "^0.9.1"
+    "csvtojson": "^2.0.10",
+    "joi": "^17.9.1"
   },
   "devDependencies": {
-    "chai": "^4.0.2",
+    "chai": "^4.3.7",
     "codeclimate-test-reporter": "^0.5.0",
-    "eslint": "^4.1.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.4.2",
-    "sinon": "^2.3.4"
+    "eslint": "^8.36.0",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "sinon": "^15.0.3"
   },
   "main": "index.js",
   "scripts": {
     "lint": "eslint *.js context lib --ext .js",
     "test": "npm run lint && mocha lib --recursive",
     "test-watch": "npm run test -- --watch",
-    "test-coverage": "istanbul cover _mocha lib -- --recursive",
+    "test-coverage": "nyc --reporter=lcov --reporter=json --reporter=text-summary mocha lib --recursive",
     "start": "node index.js | bunyan"
   },
   "bin": {
