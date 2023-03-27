@@ -21,7 +21,13 @@ An ETL framework to migrate data from Jabber to Mattermost. This utility exports
 
 ## Configure
 
-Modify the values in `context/config.js` for the source, target  
+Modify the values in `context/config.js` for the source, target
+
+### Data to be imported must be valid
+Some contraints to be aware of:
+
+- `username` must be all lowercase (no capital letters)
+- `email` must be all lowercase (no capital letters) [I think]
 
 ## Export
 
@@ -37,7 +43,8 @@ Modify the values in `context/config.js` for the source, target
 
 ### RiffEdu bulk loading command procedure
 
-(get the `importusers.json` (or whatever you name it) file to the RiffEdu instance in the ~/tmp directory) find the container id of the edu-stk_edu-mm container (e.g. 78119bd4328b)
+- get the `import.json` (or whatever you name it) file to the RiffEdu instance in the ~/tmp directory
+- find the container id of the `edu-stk_edu-mm` container (e.g. 78119bd4328b)
 
 ```
 docker cp tmp/import.json 78119bd4328b:/home/mmuser/
