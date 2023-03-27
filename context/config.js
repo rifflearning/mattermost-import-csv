@@ -1,8 +1,8 @@
 module.exports = {
   source: {
-    filename: 'source.csv'
+    filename: 'riffedu-users-scb-bch-03-23-source.csv'
   },
   target: {
-    filename: 'target.json'
+    filename: 'riffedu-users-scb-bch-03-23-target.json'
   }
 }
